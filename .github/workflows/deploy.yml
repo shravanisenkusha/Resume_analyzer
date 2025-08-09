@@ -3,7 +3,7 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main  # or master if that’s your branch
+      - main  # ya master agar tumhara branch yeh hai
 
 permissions:
   contents: read
@@ -26,10 +26,10 @@ jobs:
         run: npm ci --include=dev
 
       - name: Build Vite project
-        run: npx vite build
+        run: npm run build
 
       - name: Upload build artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
